@@ -1,0 +1,23 @@
+[
+  {
+    "name": "${NAME}",
+    "image": "644237782704.dkr.ecr.us-east-2.amazonaws.com/mikes_sonar:latest",
+    "memory": 512,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 9000,
+        "hostPort": 9000
+      }
+    ],
+    "environment": [],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${LOG_GROUP_NAME}",
+        "awslogs-region": "us-east-2",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]
